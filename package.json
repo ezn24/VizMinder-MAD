@@ -1,0 +1,47 @@
+{
+  "name": "vizminder-mad",
+  "version": "0.1.0",
+  "private": true,
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start",
+    "start:go": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start --host lan --port 8085 --clear",
+    "start:go:8085": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start --host lan --port 8085 --clear",
+    "start:tunnel": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start --tunnel",
+    "start:tunnel:clear": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start --tunnel --clear",
+    "postinstall": "node scripts/fix-expo-notifications-main.js",
+    "check:bundle": "node -e \"fetch('http://127.0.0.1:8085/node_modules/expo/AppEntry.bundle?platform=android&dev=true&hot=false&lazy=true').then(async r=>{const text=await r.text(); console.log('bundle', r.status, text.length); if(!r.ok) process.exit(1)}).catch(e=>{console.error(e.message); process.exit(1)})\"",
+    "android": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start --android",
+    "ios": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start --ios",
+    "web": "set __UNSAFE_EXPO_HOME_DIRECTORY=.expo-cache&& expo start --web"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/datetimepicker": "8.6.0",
+    "date-fns": "^4.1.0",
+    "expo": "^55.0.19",
+    "expo-font": "~55.0.6",
+    "expo-haptics": "~55.0.14",
+    "expo-image-picker": "^55.0.19",
+    "expo-notifications": "~55.0.22",
+    "expo-status-bar": "^55.0.5",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.6",
+    "react-native-animatable": "^1.4.0",
+    "react-native-calendars": "^1.1314.0",
+    "react-native-confetti-cannon": "^1.5.2",
+    "react-native-gesture-handler": "~2.30.0",
+    "react-native-paper": "^5.15.1",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-web": "^0.21.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@expo/ngrok": "^4.1.3",
+    "@types/react": "~19.2.10",
+    "babel-preset-expo": "^55.0.19",
+    "typescript": "~5.9.2"
+  }
+}
