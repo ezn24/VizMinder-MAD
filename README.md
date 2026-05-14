@@ -6,6 +6,7 @@ VizMinder is a visual-first reminder prototype for ADHD users. The prototype pai
 
 ```bash
 npm install
+npm run start:go
 ```
 
 ## Implemented Features
